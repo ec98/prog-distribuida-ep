@@ -103,6 +103,7 @@ io.smallrye.reactive:smallrye-reactive-converter-mutiny::jar:3.0.1
 io.smallrye.reactive:vertx-mutiny-generator::jar:3.12.0
 io.smallrye.stork:stork-api::jar:2.6.0
 io.smallrye.stork:stork-core::jar:2.6.0
+io.smallrye.stork:stork-service-discovery-static-list::jar:2.6.0
 io.smallrye:jandex::jar:3.1.8
 io.smallrye:smallrye-context-propagation-api::jar:2.1.0
 io.smallrye:smallrye-context-propagation-jta::jar:2.1.0

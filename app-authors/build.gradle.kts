@@ -26,6 +26,10 @@ dependencies {
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson") //JAX-RS-Json: Jackson
     implementation("io.quarkus:quarkus-hibernate-orm-panache") //JPA: Hibernate
     implementation("io.quarkus:quarkus-jdbc-postgresql") //Driver JDBC: PostgreSQL
+
+    //STORK-SERVICE
+    //implementation("io.smallrye.stork:stork-service-discovery-static-list:2.6.0")
+
 }
 
 tasks.test {

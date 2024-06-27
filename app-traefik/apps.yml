@@ -8,12 +8,18 @@ http:
       entryPoints:
         - http
       service: service-app-authors
-      rule: Host(`authors.distribuida.com`)
+#      rule: Host(`authors.distribuida.com`)
+      rule: PathPrefix(`/app-authors`)
+      middlewares:
+        - mid-authors
     router-app-books:
       entryPoints:
         - http
       service: service-app-books
-      rule: Host(`books.distribuida.com`)
+#      rule: Host(`books.distribuida.com`)
+      rule: PathPrefix(`/app-books`)
+      middlewares:
+        - mid-authors
   services:
     service-app-authors:
       loadBalancer:
@@ -24,4 +30,13 @@ http:
       loadBalancer:
         servers:
           - url: 'http://localhost:8090'
-#          - url: 'http://localhost:8091'
+#          - url: 'http://localhost:8091
+  middlewares:
+    mid-authors:
+      stripPrefix:
+        prefixes:
+          - '/app-authors'
+    mid-books:
+      stripPrefix:
+        prefixes:
+          - '/app-books'
