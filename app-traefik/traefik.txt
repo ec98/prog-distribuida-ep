@@ -1,0 +1,41 @@
+ec98
+-------------------------------------------------------------
+
+EJECUCIONES
+
+    TRAEFIK
+
+        traefik -api.insecure true
+        traefik
+
+    CONSUL
+        consul version
+        consul agent -dev
+
+-------------------------------------------------------------
+/* La parte de ejecucion es por autores y luego por books, por la configuracion padre
+ de la aplication.properties de ejemplo05_quarkus, especificando cual es el hijo. */
+
+EJECUCION PARA PUERTOS:
+
+    AUTHORS
+    java -Dquarkus.http.port=9090 -jar build/quarkus-app/quarkus-run.jar ||
+        java -Dquarkus.http.port=9090 -jar quarkus-run.jar (carpeta = quarkus-app)
+
+    java -Dquarkus.http.port=9091 -jar build/quarkus-app/quarkus-run.jar ||
+        java -Dquarkus.http.port=9091 -jar quarkus-run.jar (carpeta = quarkus-app)
+
+    BOOKS
+    java -Dquarkus.http.port=8090 -jar build/quarkus-app/quarkus-run.jar ||
+        java -Dquarkus.http.port=8090 -jar quarkus-run.jar (carpeta = quarkus-app)
+
+    java -Dquarkus.http.port=8091 -jar build/quarkus-app/quarkus-run.jar ||
+        java -Dquarkus.http.port=8091 -jar quarkus-run.jar (carpeta = quarkus-app)
+
+-------------------------------------------------------------
+NAVEGACION
+    consul (Administracion) :
+        localhost:8500
+
+    traefik:
+        localhost:8080/dashboard
